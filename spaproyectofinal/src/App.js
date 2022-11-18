@@ -7,7 +7,9 @@ class App extends Component {
       <div className='app container'>
         <div className="jumbotron">
           <p className="lead text-center">Buscador de imágenes</p>
-          <Buscador />
+          <Buscador 
+            mensaje="Buscador"
+          />
 
         </div>
       </div>
