@@ -4,11 +4,24 @@ import Buscador from './componentes/Buscador';
 class App extends Component {
   //creamos el objeto state
   state = {
-    termino : 'gatos'
+    termino : '', 
+    imagenes : []
+  }
+
+  consultarApi = () => {
+    const termino=this.state.termino;
+    const url = `https://pixabay.com/api/?key=30715967-5ba022496f0ac17e98129ea0d&q=${termino}}&image_type=photo&pretty=true`;
+    fetch(url)
+    .then(respuesta => respuesta.json())
+    .then(resultado => this.setState({imagenes : resultado.hits}))
   }
 
   datosBusqueda = (termino) => {
-    this.setState({termino})
+      this.setState({
+        termino
+      }, () => {
+      this.consultarApi();
+    })
   }
 
   render() {
@@ -18,8 +31,7 @@ class App extends Component {
           <p className="lead text-center">Buscador de imágenes</p>
           <Buscador 
             datosBusqueda={this.datosBusqueda}
-          />
-          {this.state.termino}
+          />        
         </div>
       </div>
     );
