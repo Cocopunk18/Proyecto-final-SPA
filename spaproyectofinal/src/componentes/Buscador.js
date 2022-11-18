@@ -3,15 +3,19 @@ import React, { Component } from 'react';
 class Buscador extends Component {
 
     busquedaRef = React.createRef(); // Ref nos permite leer los valores de los input con react.
-    obtenerDatos=(e) =>{
-        e.prevenDefault();// evitar que cuando le de buscar, muestre todo el texto en la parte superior de la url.
 
-        console.log(this.busquedaRef.current.value);//leer los valores de los ref
+    obtenerDatos = (e) => {
+        // evitar que cuando le de buscar, muestre todo el texto en la parte superior de la url.       
+        e.preventDefault();
+        //Tomamos el valor del input
+        const termino = this.busquedaRef.current.value;
+        //Lo enviamos al componente pricipal,
+        this.props.datosBusqueda(termino);
     }
     render() {
         return (
             <form onSubmit={this.obtenerDatos}>
-                <div className='row'>
+                <div className='row'>                    
                     <div className='form-group col-md-8'>
                         <input ref={this.busquedaRef} type="text" className='form-control form-control-lg' placeholder='Busca tu imagen. Ejemplo: Gatos'/>
                     </div>                             
