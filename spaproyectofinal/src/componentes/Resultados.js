@@ -6,6 +6,7 @@ class Resultado extends Component {
 
     mostrarImagenes = () => {
         const imagenes = this.props.imagenes;
+        //cuando este vacío el state no se ejecute la código
         if(imagenes.length === 0) return null;
 
         return(
