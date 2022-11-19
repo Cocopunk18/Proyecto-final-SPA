@@ -10,7 +10,8 @@ En el directorio del proyecto, puede ejecutar:
 
 ## bibliografía y recursos.
 
- [El ASp del proyecto consiste en una aplicación web con la busqueda de imagánes donde se consume la API de pixabay](https://pixabay.com/api/docs/?request_full_access)
+ [El ASp del proyecto consiste en una aplicación web con la busqueda de imagánes donde se consume la API de pixabay]
+ (https://pixabay.com/api/docs/?request_full_access)
 
 ### Se utilizaron funciones, métodos, contenedores de boostrap como:
 - cards
@@ -18,7 +19,6 @@ En el directorio del proyecto, puede ejecutar:
 - Buttons
 - justify-content-center
 - card-text
-
 
 [Se utiliza las combinaciones que bootswatch.com]
 (https://bootswatch.com/)
